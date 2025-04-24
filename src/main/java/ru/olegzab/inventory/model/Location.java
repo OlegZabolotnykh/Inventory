@@ -19,6 +19,6 @@ public class Location {
     @Column(name="room")
     private String room;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private Address address;
 }

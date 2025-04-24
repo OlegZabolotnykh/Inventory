@@ -7,6 +7,7 @@ import ru.olegzab.inventory.repository.ItemRepo;
 
 import java.util.List;
 
+@Service
 public class ItemServiceImpl implements ItemService {
     ItemRepo itemRepo;
 

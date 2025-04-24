@@ -8,6 +8,7 @@ import ru.olegzab.inventory.service.ItemService;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Component
 public class DbPopulator {
     private ItemService itemService;
 
@@ -45,5 +46,7 @@ public class DbPopulator {
                 .user(user)
                 .startDate(LocalDateTime.now().minusDays(100))
                 .build();
+
+        itemService.saveItem(item);
     }
 }
