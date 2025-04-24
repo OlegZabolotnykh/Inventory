@@ -16,21 +16,19 @@ import java.util.List;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "item_id")
-    private Long itemId;
+    private Long id;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name="categories")
     @ManyToMany
     private List<Category> categories;
 
     @Column(name="description")
     private String description;
 
-    @OneToMany
-    private List<Location> location;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Location location;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
