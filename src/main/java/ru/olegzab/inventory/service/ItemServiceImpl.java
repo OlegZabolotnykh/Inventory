@@ -19,7 +19,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public Item getItemById(Long id) {
         return itemRepo.findById(id).orElseThrow(
-                () -> new EntityNotFoundException(String.format("Item with %s not found", id)));
+                () -> new EntityNotFoundException("Item with %s not found".formatted(id)));
     }
 
     @Override

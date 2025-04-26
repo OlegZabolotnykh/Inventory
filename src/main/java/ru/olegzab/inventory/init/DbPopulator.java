@@ -10,17 +10,19 @@ import java.util.List;
 
 @Component
 public class DbPopulator {
-    private ItemService itemService;
+    private final ItemService itemService;
 
     public DbPopulator(ItemService itemService) {this.itemService = itemService;}
 
     @PostConstruct
     public void populate() {
         Address address = Address.builder()
+                .name("Gipronickel")
                 .addressStr("Monchegorsk, Metallurgov street, 1a")
                 .build();
 
         Location location = Location.builder()
+                .name("Warehouse")
                 .address(address)
                 .room("314")
                 .build();

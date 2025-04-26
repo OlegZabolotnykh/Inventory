@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Item Information</title>
+</head>
+<body>
+<a href="/items/all">Назад</a>
+<h1>Item information</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Название</th>
+    <th>Категории</th>
+    <th>Описание</th>
+    <th>Расположение</th>
+    <th>Пользователь</th>
+    <th>В эксплуатации с</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td data-th-text="${item.name}"></td>
+    <td data-th-text="${item.categories}"></td>
+    <td data-th-text="${item.description}"></td>
+    <td data-th-text="${item.location}"></td>
+    <td data-th-text="${item.user}"></td>
+    <td data-th-text="${item.startDate}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
