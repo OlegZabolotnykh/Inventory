@@ -1,14 +1,13 @@
 package ru.olegzab.inventory.controller;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.olegzab.inventory.service.ItemService;
 
 @Controller
-@RequestMapping(path="/items")
+@RequestMapping(path = "/items")
 public class ItemsController {
     private final ItemService itemService;
 
@@ -26,6 +25,16 @@ public class ItemsController {
     public String getItem(@PathVariable Long itemId, Model model) {
         model.addAttribute("item", itemService.getItemById(itemId));
         return "item";
+    }
+
+    @GetMapping("newItem")
+    public String newItemPage() {
+        return "new_item";
+    }
+
+    @PostMapping("newItem")
+    public void addItem(@RequestBody HttpRequest request, Model model) {
+
     }
 }
 

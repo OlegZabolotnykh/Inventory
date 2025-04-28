@@ -1,5 +1,6 @@
 package ru.olegzab.inventory.service;
 
+import ru.olegzab.inventory.dto.ItemDto;
 import ru.olegzab.inventory.model.Item;
 
 import java.util.List;

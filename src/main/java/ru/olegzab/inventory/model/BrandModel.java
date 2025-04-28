@@ -7,30 +7,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="users")
+@Table(name="models")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
-public class User {
+public class BrandModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String manufacturer;
 
-    private String lastname;
+    private String modelName;
 
-    private String department;
+    private String yearOfProduction;
 
-    private String position;
+    private String info;
 
-    private String email;
-
-    private String phone;
-
-    public String fullName() {
-        return name + " " + lastname;
+    @Override
+    public String toString() {
+        return String.format("%s %s %s", manufacturer, modelName, yearOfProduction);
     }
-
 }

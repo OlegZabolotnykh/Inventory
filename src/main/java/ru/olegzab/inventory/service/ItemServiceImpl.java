@@ -2,6 +2,7 @@ package ru.olegzab.inventory.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import ru.olegzab.inventory.dto.ItemDto;
 import ru.olegzab.inventory.model.Item;
 import ru.olegzab.inventory.repository.ItemRepo;
 
@@ -41,4 +42,5 @@ public class ItemServiceImpl implements ItemService {
     public void deleteItem(Item item) {
         itemRepo.delete(item);
     }
+
 }
