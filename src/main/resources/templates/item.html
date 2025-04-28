@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Item Information</title>
+  <link rel="stylesheet" href="/main.css">
 </head>
 <body>
 <a href="/items/all">Назад</a>
@@ -10,22 +11,26 @@
 <table>
   <thead>
   <tr>
-    <th>Название</th>
+    <th>Инвентарный №</th>
+    <th>Серийный №</th>
+    <th>Модель</th>
     <th>Категории</th>
     <th>Описание</th>
     <th>Расположение</th>
     <th>Пользователь</th>
-    <th>В эксплуатации с</th>
+    <th>Дата ввода в эксплуатацию</th>
   </tr>
   </thead>
   <tbody>
   <tr>
-    <td data-th-text="${item.name}"></td>
-    <td data-th-text="${item.categories}"></td>
-    <td data-th-text="${item.description}"></td>
-    <td data-th-text="${item.location}"></td>
-    <td data-th-text="${item.user}"></td>
+    <td data-th-text="${item.inventoryNumber}"></td>
+    <td data-th-text="${item.serialNumber}"></td>
+    <td data-th-text="${item.brandModel}"></td>
+    <td data-th-text="${item.getCategoriesAsString()}"></td>
+    <td data-th-text="${item.location.name}"></td>
+    <td data-th-text="${item.user.fullName()}"></td>
     <td data-th-text="${item.startDate}"></td>
+    <td data-th-text="${item.info}"></td>
   </tr>
   </tbody>
 </table>

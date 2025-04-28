@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <link rel="stylesheet" href="/main.css">
+  <title>Items</title>
 </head>
 <body>
 <h1>Items</h1>
@@ -12,13 +13,17 @@
   <tbody>
     <tr data-th-each="item : ${items}">
       <td>
-        <a data-th-href="@{/items/{itemId}(itemId=${item.id})}" th:text="${item.name}"></a>
+        <a data-th-href="@{/items/{itemId}(itemId=${item.id})}" th:text="${item.inventoryNumber}"></a>
       </td>
-      <td th:text="${item.location.address.addressStr}"></td>
-      <td th:text="${item.user.name + ' ' + item.user.lastname}"></td>
-      <td data-th-text="${item.description}"></td>
+      <td>
+        <a data-th-href="@{/items/{itemId}(itemId=${item.id})}" th:text="${item.brandModel.toString()}"></a>
+      </td>
+      <td th:text="${item.location.name}"></td>
+      <td th:text="${item.user.fullName()}"></td>
+      <td data-th-text="${item.info}"></td>
     </tr>
   </tbody>
 </table>
+<a href="/items/newItem">Добавить позицию</a>
 </body>
 </html>
