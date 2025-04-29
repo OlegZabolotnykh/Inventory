@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Address</title>
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <h1>All addresses</h1>
+    <table>
+      <thead>
+
+      </thead>
+      <tbody>
+      <tr data-th-each="address : ${addresses}">
+        <td data-th-text="${address.id}"></td>
+        <td data-th-text="${address.name}"></td>
+        <td data-th-text="${address.addressStr}"></td>
+      </tr>
+      </tbody>
+    </table>
+    <a href="/addresses/new">Добавить новый адрес</a>
+  </body>
+</html>
