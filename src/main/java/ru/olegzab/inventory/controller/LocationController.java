@@ -24,6 +24,8 @@ public class LocationController {
         return "locations";
     }
 
+
+
     @GetMapping("{locationId:\\d+}")
     public String getLocationInfo(@PathVariable Long locationId, Model model) {
         model.addAttribute("location", locationService.getLocationById(locationId));
