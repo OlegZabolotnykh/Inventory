@@ -9,7 +9,7 @@ import java.util.List;
 public interface AddressService {
     AddressDto getAddressById(Long id);
     List<AddressDto> findAll();
-    void saveItem(AddressDto addressDto);
-//    void updateItem(AddressDto addressDto);
-//    void deleteItem(AddressDto addressDto);
+    void saveAddress(AddressDto addressDto);
+    void deleteAddressById(Long id);
+    void update(Long addressId, AddressDto addressDto);
 }

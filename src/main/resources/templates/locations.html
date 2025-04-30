@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Address</title>
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <h1>Локации</h1>
+    <table>
+      <thead>
+
+      </thead>
+      <tbody>
+      <tr data-th-each="location : ${locations}">
+        <td>
+          <a data-th-href="@{/locations/{locationId}(locationId=${location.id})}" data-th-text="${location.id}"></a>
+        </td>
+        <td data-th-text="${location.name}"></td>
+        <td data-th-text="${location.room}"></td>
+        <td data-th-text="${location.address.name}"></td>
+      </tr>
+      </tbody>
+    </table>
+    <a href="/locations/new">Добавить новую локацию</a>
+  </body>
+</html>

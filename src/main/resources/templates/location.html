@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <h1>Информация о локации</h1>
+    <p><a th:href="@{/locations}">← к списку локаций</a></p>
+    <table>
+      <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Помещение</th>
+        <th>Адрес</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td th:text="${location.name}"></td>
+        <td th:text="${location.room}"></td>
+        <td th:text="${location.address.name}"></td>
+      </tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>

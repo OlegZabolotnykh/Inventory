@@ -13,7 +13,9 @@
       </thead>
       <tbody>
       <tr data-th-each="address : ${addresses}">
-        <td data-th-text="${address.id}"></td>
+        <td>
+          <a data-th-href="@{/addresses/{addressId}(addressId=${address.id})}" data-th-text="${address.id}"></a>
+        </td>
         <td data-th-text="${address.name}"></td>
         <td data-th-text="${address.addressStr}"></td>
       </tr>

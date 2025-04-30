@@ -16,7 +16,7 @@ public class AddressController {
         this.addressService = addressService;
     }
 
-    @GetMapping("all")
+    @GetMapping
     public String getAllAddresses(Model model) {
         model.addAttribute("addresses", addressService.findAll());
         return "addresses";
@@ -36,7 +36,25 @@ public class AddressController {
 
     @PostMapping("new")
     public String addNewAddress(@ModelAttribute AddressDto newAddressDto, Model model) {
-        addressService.saveItem(newAddressDto);
-        return "redirect:/addresses/all";
+        addressService.saveAddress(newAddressDto);
+        return "redirect:/addresses";
+    }
+
+    @PostMapping("{addressId:\\d+}/delete")
+    public String deleteAddress(@PathVariable Long addressId, Model model) {
+        addressService.deleteAddressById(addressId);
+        return "redirect:/addresses";
+    }
+
+    @GetMapping("{addressId:\\d+}/edit")
+    public String getEditAddress(@PathVariable Long addressId, Model model) {
+        model.addAttribute("address", addressService.getAddressById(addressId));
+        return "edit_address";
+    }
+
+    @PostMapping("{addressId:\\d}/edit")
+    public String postEditAddress(@PathVariable Long addressId, @ModelAttribute AddressDto address) {
+        addressService.update(addressId, address);
+        return "redirect:/addresses/{addressId}";
     }
 }

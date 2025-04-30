@@ -7,6 +7,7 @@
 </head>
 <body>
 <h1>Address</h1>
+  <p><a href="/addresses"> ← К списку адресов</a></p>
 <table>
   <thead>
 
@@ -19,5 +20,9 @@
   </tr>
   </tbody>
 </table>
+  <a th:href="@{/addresses/{addressId}/edit(addressId=${address.id})}">Редактировать</a>
+  <form th:action="@{/addresses/{addressId}/delete(addressId=${address.id})}" method="post">
+    <button type="submit">Удалить</button>
+  </form>
 </body>
 </html>

@@ -34,7 +34,18 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public void saveItem(AddressDto addressDto) {
+    public void saveAddress(AddressDto addressDto) {
+        addressRepo.save(addressDtoConverter.dtoToModel(addressDto));
+    }
+
+    @Override
+    public void deleteAddressById(Long id) {
+        addressRepo.deleteById(id);
+    }
+
+    @Override
+    public void update(Long addressId, AddressDto addressDto) {
+        addressDto.setId(addressId);
         addressRepo.save(addressDtoConverter.dtoToModel(addressDto));
     }
 }
