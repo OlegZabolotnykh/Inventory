@@ -3,6 +3,7 @@ package ru.olegzab.inventory.dto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import ru.olegzab.inventory.model.BrandModel;
 import ru.olegzab.inventory.model.Category;
 import ru.olegzab.inventory.model.Location;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class ItemDto {
     private Long id;
 
@@ -22,7 +24,7 @@ public class ItemDto {
 
     private BrandModel brandModel;
 
-    private List<Category> categories;
+    private List<CategoryDto> categories;
 
     private String info;
 
@@ -31,6 +33,4 @@ public class ItemDto {
     private User user;
 
     private LocalDate startDate;
-
-
 }
