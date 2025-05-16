@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Item Information</title>
-  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 <a href="/items/all">Назад</a>
@@ -15,10 +15,10 @@
     <th>Серийный №</th>
     <th>Модель</th>
     <th>Категории</th>
-    <th>Описание</th>
     <th>Расположение</th>
     <th>Пользователь</th>
     <th>Дата ввода в эксплуатацию</th>
+    <th>Описание</th>
   </tr>
   </thead>
   <tbody>
@@ -26,7 +26,7 @@
     <td data-th-text="${item.inventoryNumber}"></td>
     <td data-th-text="${item.serialNumber}"></td>
     <td data-th-text="${item.brandModel}"></td>
-    <td data-th-text="${item.getCategoriesAsString()}"></td>
+    <td data-th-text="${item.categories}"></td>
     <td data-th-text="${item.location.name}"></td>
     <td data-th-text="${item.user.fullName()}"></td>
     <td data-th-text="${item.startDate}"></td>

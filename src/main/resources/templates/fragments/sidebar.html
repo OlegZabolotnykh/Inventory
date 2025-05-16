@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <nav th:fragment="sidebar" class="sticky-top h-100
+     col-2 sidebar-dark bg-dark">
+      <ul>
+        <li>
+          <a href="#sm_expand_1" data-toggle="collapse">
+            <i class="fa fa-fw fa-link"></i> Users
+          </a>
+          <ul id="sm_expand_1" class="list-unstyled collapse">
+            <li><a th:href="@{/users/all}">All users</a></li>
+            <li><a th:href="@{/users/new}">Create user</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#sm_expand_2" data-toggle="collapse">
+            <i class="fa fa-fw fa-link"></i> Roles
+          </a>
+          <ul id="sm_expand_2" class="list-unstyled collapse">
+            <li><a th:href="@{/roles/all}">All roles</a></li>
+            <li><a th:href="@{/roles/new}">Create role</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#sm_expand_3" data-toggle="collapse">
+            <i class="fa fa-fw fa-link"></i> Brands
+          </a>
+          <ul id="sm_expand_3" class="list-unstyled collapse">
+            <li><a th:href="@{/brands/all}">All brands</a></li>
+            <li><a th:href="@{/brands/new}">Create brand</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#sm_expand_4" data-toggle="collapse">
+            <i class="fa fa-fw fa-link"></i> Categories
+          </a>
+          <ul id="sm_expand_4" class="list-unstyled collapse">
+            <li><a th:href="@{/categories/all}">All categories</a></li>
+            <li><a th:href="@{/categories/new}">Create category</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#sm_expand_5" data-toggle="collapse">
+            <i class="fa fa-fw fa-link"></i> Products
+          </a>
+          <ul id="sm_expand_5" class="list-unstyled collapse">
+            <li><a th:href="@{/products/all}">All products</a></li>
+            <li><a th:href="@{/products/new}">Create product</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

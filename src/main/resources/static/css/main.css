@@ -1,0 +1,18 @@
+td {
+    border: 1px solid black;
+}
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse
+}
+
+.sidebar-wrapper {
+    /*height: 100vh;*/
+    /*position: fixed;*/
+    padding-top: 10vh;
+}
+
+#header {
+    /*position: fixed;*/
+}
