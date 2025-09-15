@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head data-th-fragment="head">
+    <meta charset="UTF-8">
+    <title>Учёт оборудования</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <nav class="navbar bg-dark fixed-top" id="header" th:fragment="header">
+        <ul class="nav col-auto">
+          <li><a th:href="@{/items/all}" class="nav-link px-2 link-secondary text-light">Оборудование</a></li>
+          <li><a href="#" class="nav-link px-2 link-body-emphasis text-light">Products</a></li>
+        </ul>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+    </nav>
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head data-th-replace="fragments/header :: head">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Items</title>
+  </head>
+  <body>
+    <header data-th-replace="fragments/header :: header"></header>
+    <div class="container-fluid">
+      <div class="row">
+        <div data-th-replace="fragments/sidebar :: sidebar"></div>
+        <div class="col-auto">
+          <h1>Items</h1>
+          <table>
+            <thead>
+            </thead>
+            <tbody>
+            <tr data-th-each="item : ${items}">
+              <td>
+                <a data-th-href="@{/items/{itemId}(itemId=${item.id})}" th:text="${item.inventoryNumber}"></a>
+              </td>
+              <td>
+                <a data-th-href="@{/items/{itemId}(itemId=${item.id})}" th:text="${item.brandModel.toString()}"></a>
+              </td>
+              <td th:text="${item.location.name}"></td>
+              <td th:text="${item.user.fullName()}"></td>
+              <td data-th-text="${item.info}"></td>
+            </tr>
+            </tbody>
+          </table>
+          <a href="/items/newItem">Добавить позицию</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

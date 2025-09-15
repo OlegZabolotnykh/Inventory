@@ -29,4 +29,8 @@ public class User {
 
     private String phone;
 
+    public String fullName() {
+        return name + " " + lastname;
+    }
+
 }

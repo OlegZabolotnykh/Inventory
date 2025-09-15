@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <h1>Edit address</h1>
+    <form th:object="${address}" th:action="@{/addresses/{addressId}/edit(addressId=${address.id})}" method="post">
+      <label for="name">Name<input id="name" th:value="*{name}" th:field="*{name}"></label>
+      <label for="addressStr">addressString<input id="addressStr" th:value="*{addressStr}" th:field="*{addressStr}"></label>
+      <button type="submit">Изменить</button>
+    </form>
+  </body>
+</html>

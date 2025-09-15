@@ -6,8 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Entity
@@ -21,14 +22,19 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name="serial_number", unique=true)
+    private String serialNumber;
+
+    @Column(name="inventory_number", unique = true)
+    private String inventoryNumber;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private BrandModel brandModel;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private List<Category> categories;
 
-    @Column(name="description")
-    private String description;
+    private String info;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Location location;
@@ -36,6 +42,11 @@ public class Item {
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST , CascadeType.MERGE, CascadeType.REFRESH})
     private User user;
 
-    private LocalDateTime startDate;
+    private LocalDate startDate;
+
+    public String getCategoriesAsString() {
+        return this.categories.stream()
+                .map(Category::getName)
+                .collect(Collectors.joining(", "));}
 
 }

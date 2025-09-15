@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Address</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<h1>Address</h1>
+  <p><a href="/addresses"> ← К списку адресов</a></p>
+<table>
+  <thead>
+
+  </thead>
+  <tbody>
+  <tr>
+    <td th:text="${address.id}"></td>
+    <td th:text="${address.name}"></td>
+    <td th:text="${address.addressStr}"></td>
+  </tr>
+  </tbody>
+</table>
+  <a th:href="@{/addresses/{addressId}/edit(addressId=${address.id})}">Редактировать</a>
+  <form th:action="@{/addresses/{addressId}/delete(addressId=${address.id})}" method="post">
+    <button type="submit">Удалить</button>
+  </form>
+</body>
+</html>

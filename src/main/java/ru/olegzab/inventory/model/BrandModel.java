@@ -7,16 +7,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name="models")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
-public class Address {
+public class BrandModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String manufacturer;
 
-    private String addressStr;
+    private String modelName;
+
+    private String yearOfProduction;
+
+    private String info;
+
+    @Override
+    public String toString() {
+        return String.format("%s %s %s", manufacturer, modelName, yearOfProduction);
+    }
 }
